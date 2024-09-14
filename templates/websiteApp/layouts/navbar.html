@@ -5,7 +5,7 @@
     <div class="custom-container">
         <div class="custom-row align-items-center justify-content-between">
             <div class="header-left d-flex align-items-center">
-                <a href="index.html" class="logo">
+                <a href="{% url 'index' %}" class="logo">
                     <img src="{% static 'assets/imgs/logo.png' %}" alt="Logo" />
                 </a>
 
@@ -21,10 +21,10 @@
                     </span>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{% url 'index' %}">Home</a>
                         </li>
                         <li class="mega-menu-item">
-                            <a href="company.html">Company</a>
+                            <a href="{% url 'company' %}">Company</a>
                             <span class="dropdown-menu-item-icon">
                                 <i class="las la-angle-down"></i>
                             </span>
@@ -33,7 +33,7 @@
                                     <div class="custom-container d-flex">
                                         <div class="left">
                                             <div class="mega-menu-link-wrap d-flex justify-content-between">
-                                                <div class="mega-menu-link">
+                                                {% comment %} <div class="mega-menu-link">
                                                     <h3>Get Started</h3>
                                                     <ul>
                                                         <li><a href="#">Setup 101</a></li>
@@ -43,40 +43,40 @@
                                                         <li><a href="#">Plugins</a></li>
                                                         <li><a href="#">Templates</a></li>
                                                     </ul>
-                                                </div>
+                                                </div> {% endcomment %}
 
                                                 <div class="mega-menu-links d-flex">
                                                     <div class="mega-menu-link">
                                                         <h3>Company</h3>
                                                         <ul>
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="partner.html">Partners</a></li>
-                                                            <li><a href="career.html">Careers</a></li>
-                                                            <li><a href="event.html">Events</a></li>
-                                                            <li><a href="team.html">Team</a></li>
-                                                             <li><a href="blog.html">Blog</a></li>
+                                                            <li><a href="{% url 'company.about' %}">About Us</a></li>
+                                                            <li><a href="{% url 'company.partners' %}">Partners</a></li>
+                                                            <li><a href="{% url 'company.careers' %}">Careers</a></li>
+                                                            <li><a href="{% url 'company.events' %}">Events</a></li>
+                                                            <li><a href="{% url 'company.team' %}">Team</a></li>
+                                                            <li><a href="{% url 'company.blog' %}">Blog</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="mega-menu-link">
                                                         <h3>Product</h3>
                                                         <ul>
-                                                            <li><a href="overview.html">Overview</a></li>
-                                                            <li><a href="pricing.html">Pricing</a></li>
-                                                            <li><a href="feature.html">Features</a></li>
-                                                            <li><a href="case-studie.html">Case Studies</a></li>
-                                                            <li><a href="new-release.html">New Releases</a></li>
-                                                            <li><a href="solution.html">Solutions</a></li>
+                                                            <li><a href="{% url 'product.overview' %}">Overview</a></li>
+                                                            <li><a href="{% url 'product.pricing' %}">Pricing</a></li>
+                                                            <li><a href="{% url 'product.features' %}">Features</a></li>
+                                                            <li><a href="{% url 'product.case_studies' %}">Case Studies</a></li>
+                                                            <li><a href="{% url 'product.new_releases' %}">New Releases</a></li>
+                                                            <li><a href="{% url 'product.solutions' %}">Solutions</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="mega-menu-link">
                                                         <h3>Legal</h3>
                                                         <ul>
-                                                            <li><a href="#">Licenses</a></li>
-                                                            <li><a href="#">Settings</a></li>
-                                                            <li><a href="#">Cookies</a></li>
-                                                            <li><a href="#">Document</a></li>
-                                                            <li><a href="#">Terms</a></li>
-                                                            <li><a href="#">Privacy</a></li>
+                                                            <li><a href="{% url 'legal.licenses' %}">Licenses</a></li>
+                                                            <li><a href="{% url 'legal.settings' %}">Settings</a></li>
+                                                            <li><a href="{% url 'legal.cookies' %}">Cookies</a></li>
+                                                            <li><a href="{% url 'legal.document' %}">Document</a></li>
+                                                            <li><a href="{% url 'legal.terms' %}">Terms</a></li>
+                                                            <li><a href="{% url 'legal.privacy' %}">Privacy</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -91,7 +91,7 @@
                                                     <li><a href="#"><i class="iconoir-linkedin"></i></a></li>
                                                 </ul>
 
-                                                <p>Looking for new career? <a href="career.html">We're hiring</a></p>
+                                                <p>Looking for new career? <a href="{% url 'company.careers' %}">We're hiring</a></p>
                                             </div>
                                         </div>
                                         <div class="right">
