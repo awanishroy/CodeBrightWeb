@@ -99,7 +99,7 @@
                                                 <img src="{% static 'assets/imgs/iphone-13-1.jpg'%}" alt="Iphone" />
                                                 <h2>Solution in your hand</h2>
                                                 <p>Develop IT solutions based on the<br> analysis phase.</p>
-                                                <a href="case-studie-single.html">View more</a>
+                                                <a href="">View more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
                                                 </ul>
 
                                                 <p>
-                                                    <a href="portfolio.html">View Portfolio <i
+                                                    <a href="{% url 'portfolio' %}">View Portfolio <i
                                                             class="iconoir-arrow-up-right"></i></a>
                                                 </p>
                                             </div>
@@ -192,7 +192,7 @@
                             </div>
                         </li>
                        <li class="mega-menu-item">
-                            <a href="service.html">Services</a>
+                            <a href="{% url 'services' %}">Services</a>
                             <span class="dropdown-menu-item-icon">
                                 <i class="las la-angle-down"></i>
                             </span>
@@ -249,23 +249,23 @@
                                                     <div class="mega-menu-link">
                                                         <h3>Services</h3>
                                                         <ul>
-                                                            <li><a href="service-details.html">Development</a></li>
-                                                            <li><a href="service-details.html">Web Design</a></li>
-                                                            <li><a href="service-details.html">IT Support</a></li>
-                                                            <li><a href="service-details.html">E-Commerce</a></li>
-                                                            <li><a href="service-details.html">Cloud Things</a></li>
-                                                            <li><a href="service-details.html">CRM Solutions</a></li>
+                                                            <li><a href="{% url 'services' %}">Development</a></li>
+                                                            <li><a href="{% url 'services' %}">Web Design</a></li>
+                                                            <li><a href="{% url 'services' %}">IT Support</a></li>
+                                                            <li><a href="{% url 'services' %}">E-Commerce</a></li>
+                                                            <li><a href="{% url 'services' %}">Cloud Things</a></li>
+                                                            <li><a href="{% url 'services' %}">CRM Solutions</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="mega-menu-link">
                                                         <h3>Our Fields</h3>
                                                         <ul>
-                                                            <li><a href="our-field-details.html">Healthcare</a></li>
-                                                            <li><a href="our-field-details.html">Banks</a></li>
-                                                            <li><a href="our-field-details.html">Logistics</a></li>
-                                                            <li><a href="our-field-details.html">Supermarkets</a></li>
-                                                            <li><a href="our-field-details.html">Industries</a></li>
-                                                            <li><a href="our-field-details.html">Hotels</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Healthcare</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Banks</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Logistics</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Supermarkets</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Industries</a></li>
+                                                            <li><a href="{% url 'our_fields' %}">Hotels</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -280,7 +280,7 @@
                                                     <li><a href="#"><i class="iconoir-linkedin"></i></a></li>
                                                 </ul>
 
-                                                <p>Looking for new career? <a href="career.html">We're hiring</a></p>
+                                                <p>Looking for new career? <a href="{% url 'company.careers' %}">We're hiring</a></p>
                                             </div>
                                         </div>
                                         <div class="right">
@@ -288,7 +288,7 @@
                                                 <img src="{% static 'assets/imgs/ipad.jpg'%}" alt="iPad" />
                                                 <h2>Our product hits</h2>
                                                 <p>Our new best IT product of the <br>year 2023.</p>
-                                                <a href="case-studie-single.html">View more</a>
+                                                <a href="">View more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -296,7 +296,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="faq.html">FAQ</a>
+                            <a href="{% url 'faq' %}">FAQ</a>
                         </li>
                     </ul>
                 </nav>

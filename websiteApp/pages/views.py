@@ -288,3 +288,67 @@ def legal_privacy(request):
 
 # ======================================== LEGAL END ============================================
 
+
+# ======================================= PORTFOLIO START =======================================
+
+def portfolio(request):
+    seo = {
+        'title': 'Portfolio - CodeBright',
+        'description': 'Browse our portfolio of projects and services.',
+        'keywords': 'portfolio, projects, services'
+        }
+    data = {
+        'Seo': seo
+        }
+    return render(request, 'websiteApp/portfolio/portfolio.html', data)
+
+# ======================================= PORTFOLIO END =========================================
+
+
+# ======================================= SERVICES START ========================================
+
+def services(request):
+    seo = {
+        'title': 'Services - CodeBright',
+        'description': 'Discover our range of services and how we can help you.',
+        'keywords': 'services, service, help'
+        }
+    data = {
+        'Seo': seo
+        }
+    return render(request, 'websiteApp/services/services.html', data)
+
+# ======================================= SERVICES END ===========================================
+
+
+# ======================================= OUR FIELDS START =======================================
+
+def our_fields(request):
+    seo = {
+        'title': 'Our Fields - CodeBright',
+        'description': 'Learn about our areas of expertise and how we can help you.',
+        'keywords': 'our fields, areas of expertise'
+        }
+    data = {
+        'Seo': seo
+        }
+    return render(request, 'websiteApp/our_fields/our_fields.html', data)
+
+# ======================================= OUR FIELDS END =========================================
+
+
+# =========================================== FAQ START ==========================================
+
+def faq(request):
+    seo = {
+        'title': 'FAQ - CodeBright',
+        'description': 'Get answers to your questions about our services and more.',
+        'keywords': 'faq, questions, answers'
+        }
+    data = {
+        'Seo': seo
+        }
+    return render(request, 'websiteApp/faq/faq.html', data)
+
+# ============================================ FAQ END ============================================
+

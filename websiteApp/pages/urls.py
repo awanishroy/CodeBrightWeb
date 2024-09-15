@@ -23,7 +23,7 @@ urlpatterns = [
     path('team', views.team, name='company.team'),
     path('blog', views.blog, name='company.blog'),
 
-    # ========================= COMPANY END ===========================
+    # ========================= COMPANY END ============================
 
 
     # ========================== PRODUCT START =========================
@@ -35,10 +35,10 @@ urlpatterns = [
     path('product/new_releases', views.product_new_releases, name='product.new_releases'),
     path('product/solutions', views.product_solutions, name='product.solutions'),
 
-    # ========================== PRODUCT END ============================
+    # ========================== PRODUCT END ===========================
 
 
-    # =========================== LEGAL START ===========================
+    # =========================== LEGAL START ==========================
 
     path('legal/licenses', views.legal_licenses, name='legal.licenses'),
     path('legal/settings', views.legal_settings, name='legal.settings'),
@@ -47,6 +47,35 @@ urlpatterns = [
     path('legal/terms', views.legal_terms, name='legal.terms'),
     path('legal/privacy', views.legal_privacy, name='legal.privacy'),
 
-    # =========================== LEGAL END ============================
+    # =========================== LEGAL END =============================
+
+
+    # =========================== PORTFOLIO START =======================
+
+    path('portfolio', views.portfolio, name='portfolio'),
+
+    # =========================== PORTFOLIO END =========================
+
+
+    # =========================== SERVICES START ========================
+
+    path('services', views.services, name='services'),
+
+    # =========================== SERVICES END ==========================
+
+
+    # =========================== OUR FIELDS START ======================
+
+    path('our_fields', views.our_fields, name='our_fields'),
+
+    # =========================== OUR FIELDS END ========================
+
+
+    # =========================== OUR FAQ START =========================
+
+    path('faq', views.faq, name='faq'),
+
+    # ============================ OUR FAQ END ==========================
+
 
 ]
