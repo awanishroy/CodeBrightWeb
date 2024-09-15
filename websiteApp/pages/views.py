@@ -117,6 +117,17 @@ def blog(request):
 
     return render(request, 'websiteApp/company/blog.html', data)
 
+def contact_us(request):
+    seo = {
+        'title': 'Contact Us - CodeBright',
+        'description': 'Get in touch with us through our contact form or email address.',
+        'keywords': 'contact, contact form, email'
+        }
+    data = {
+        'Seo' : seo
+        }
+        
+    return render(request, 'websiteApp/company/contact_us.html', data)
 
 # ======================================== COMPANY END ========================================
 

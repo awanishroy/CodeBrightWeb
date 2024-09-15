@@ -22,6 +22,7 @@ urlpatterns = [
     path('events', views.events, name='company.events'),
     path('team', views.team, name='company.team'),
     path('blog', views.blog, name='company.blog'),
+    path('contact_us', views.contact_us, name='company.contact_us'),
 
     # ========================= COMPANY END ============================
 
