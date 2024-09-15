@@ -37,7 +37,7 @@ def company(request):
         'Seo' : seo
     }
 
-    return render(request, 'websiteApp/company/about.html', data)
+    return render(request, 'websiteApp/company/company.html', data)
 
 def about(request):
     seo = {
@@ -50,7 +50,7 @@ def about(request):
         'Seo' : seo
     }
 
-    return render(request, 'websiteApp/company/about.html', data)
+    return render(request, 'websiteApp/company/company.html', data)
 
 def partners(request):
     seo = {

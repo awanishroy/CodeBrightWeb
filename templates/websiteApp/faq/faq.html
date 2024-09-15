@@ -9,6 +9,183 @@
 
 {% block section %}
 
+<section class="hero-service-wrap hero-section-wrap hero-portfolio-wrap hero-faq-wrap">
+    <div class="hero-section-content-wrap">
+        <div class="custom-container">
+            <div class="hero-portfolio-body">
+                <div class="hero-section-content text-center">
+                    <h5 class="section-subtitle">FAQ</h5>
+                    <h1 class="section-title fade-in">Our expert team give answers to <br>
+                        your common questions</h1>
+                    <p>Welcome to our FAQs section, where we address the most common questions and <br>
+                        queries our clients and visitors often have.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="faq-area  faq-style-2-area">
+    <div class="custom-container">
+        <div class="faq-inner">
+            <h5 class="section-subtitle">FAQ SECTION</h5>
+            <h1 class="section-title">Frequently asked questions</h1>
+            <div class="faq-items-box">
+                <div class="faq-col">
+                    <div id="accordion">
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingOne">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> What does your company will provide?
+                                </button>
+                            </h5>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    At our IT service company, we give offer a comprehensive range of server solutions,
+                                    including managed IT in services, network infrastructure setup.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingTwo">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> Do you offer training for employees?
+                                </button>
+                            </h5>
+
+                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    Yes, we provide IT training tailored to your business needs. Our training is programs cover various IT aspects, our high including software usage, cybersecurity 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingThree">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> Do you offer 24/7 support for services?
+                                </button>
+                            </h5>
+
+                            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    Yes, we provide IT training tailored to your business needs. Our training is programs cover various IT aspects, our high including software usage, cybersecurity 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-col">
+                    <div id="accordion2">
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingFour">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> Can you assist with recovery planning?
+                                </button>
+                            </h5>
+
+                            <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion2">
+                                <div class="card-body">
+                                    Yes, we provide IT training tailored to your business needs. Our training is programs cover various IT aspects, our high including software usage, cybersecurity 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingFive">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" class="">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> Can you help with cloud management?
+                                </button>
+                            </h5>
+
+                            <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordion2" style="">
+                                <div class="card-body">
+                                    Yes, we provide IT training tailored to your business needs. Our training is programs cover various IT aspects, our high including software usage, cybersecurity 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <h5 class="card-header" id="headingSix">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix" class="">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %}" alt="Icon">
+                                    </div> How can get started with your services?
+                                </button>
+                            </h5>
+
+                            <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordion2" style="">
+                                <div class="card-body">
+                                    Yes, we provide IT training tailored to your business needs. Our training is programs cover various IT aspects, our high including software usage, cybersecurity 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="faq-items-box">
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>What does your company will provide?</h3>
+                        <p>At our IT service company, we give offer a comprehensive range of server solutions, including managed IT in services, network infrastructure setup.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>What does your company will provide?</h3>
+                        <p>At our IT service company, we give offer a comprehensive range of server solutions, including managed IT in services, network infrastructure setup.</p>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>Do you offer 24/7 support for services?</h3>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>Can you assist with recovery planning?</h3>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>Can you help with cloud management?</h3>
+                    </div>
+                </div>
+                <div class="faq-box">
+                    <div class="icon">
+                        <img src="./{% static 'assets/imgs/question-icon.svg' %}" alt="Icon"/>
+                    </div>
+                    <div class="content-body">
+                        <h3>How can get started with your services?</h3>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
 
 {% endblock section %}
