@@ -7,57 +7,46 @@
             <div class="contact-form-wrap">
                 <div class="contact-form-body">
                     <h5 class="section-subtitle">Contact</h5>
-                    <h1 class="section-title">Lets get in touch</h1>
-                    <p>You can reach us anytime via <a href="mailto:hr@codebright.in">hr@codebright.com</a></p>
-                    <form action="https://wpriverthemes.com/HTML/synck/assets/mail/contact.php" method="POST"
-                        class="contact-form">
+                    <h1 class="section-title">Let's Get in Touch</h1>
+                    <p>You can reach us anytime via <a href="mailto:hr@codebright.in">hr@codebright.in</a></p>
+                    <form action="https://apis.codebright.in/portfolio-api/contact-us-message-add" method="POST" class="contact-form">
+                        <input id="PR_WEBSITE" type="hidden" name="PR_WEBSITE" value="1" />
                         <div class="input-row">
                             <div class="input-group">
-                                <label for="first_name">First Name</label>
-                                <input id="first_name" type="text" name="first_name" placeholder="First Name" />
-                            </div>
-                            <div class="input-group">
-                                <label for="last_name">Last Name</label>
-                                <input id="last_name" type="text" name="last_name" placeholder="Last Name" />
+                                <label for="PR_NAME">Full Name</label>
+                                <input id="PR_NAME" type="text" name="PR_NAME" placeholder="Your Full Name" />
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" />
+                                <label for="PR_EMAIL">Email</label>
+                                <input id="PR_EMAIL" type="email" name="PR_EMAIL" placeholder="Your Email" />
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group phone-number">
-                                <select class="number-prefix">
+                                <select class="number-prefix" name="number-prefix">
                                     <option value="ind">IND</option>
-                                    <option value="us">US</option>
                                 </select>
-                                <label for="phone_number">Phone Number</label>
-                                <input id="phone_number" type="text" name="phone_number" placeholder="Your Number" />
-                            </div>
-                            <div class="input-group">
-                                <label for="country">Country</label>
-                                <input type="text" id="homeland" name="country" placeholder="Your Country" />
+                                <label for="PR_PHONE">Phone Number</label>
+                                <input id="PR_PHONE" type="text" name="PR_PHONE" placeholder="Your Number" />
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" placeholder="Leave us a message...."></textarea>
+                                <label for="PR_MESSAGE">Message</label>
+                                <textarea name="PR_MESSAGE" id="PR_MESSAGE" placeholder="Leave us a message...."></textarea>
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group input-checkbox">
-                                <input type="checkbox" id="privacy_policy_accept">
-                                <label for="privacy_policy_accept">You agree to our <a href="#">terms and
-                                        conditions.</a></label>
+                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept">
+                                <label for="privacy_policy_accept">You agree to our <a href="#">terms and conditions.</a></label>
                             </div>
                         </div>
-
                         <div class="input-row">
                             <div class="input-group">
-                                <button id="submit" class="theme-btn">Get Started</button>
+                                <button id="submit" class="theme-btn" type="submit">Get Started</button>
                             </div>
                         </div>
                         <!-- Alert Message -->
@@ -74,11 +63,11 @@
                 <ul>
                     <li>
                         <h1>4+ <span>Years</span></h1>
-                        <p>Field Experience </p>
+                        <p>Field Experience</p>
                     </li>
                     <li>
                         <h1>89+ <span>Projects</span></h1>
-                        <p>Done Around World </p>
+                        <p>Done Around the World</p>
                     </li>
                     <li>
                         <h1>99%</h1>
@@ -102,38 +91,33 @@
                         <h3>Contact Info</h3>
                         <p>
                             +91 721 776 6185 <br>
-                            hr@codebright.in
+                            <a href="mailto:hr@codebright.in">hr@codebright.in</a>
                         </p>
                     </div>
                     <div class="contact-office-info contact-info">
-                        <img src="{% static 'assets/imgs/map-icon.svg' %}" alt="Map" style="" />
-                        <h3>Visit our office</h3>
+                        <img src="{% static 'assets/imgs/map-icon.svg' %}" alt="Map" />
+                        <h3>Visit Our Office</h3>
                         <p>Singhal Tower, Third Floor, C Block, Sector-58, Noida, UP - 201309</p>
                     </div>
-
                     <ul class="contact-social-links">
                         <li>
                             <a href="#">
-                                <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-facebook"></i>
-                                Facebook
+                                <i class="iconoir-facebook"></i> Facebook
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-twitter"></i>
-                                Twitter
+                                <i class="iconoir-twitter"></i> Twitter
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-instagram"></i>
-                                Instagram
+                                <i class="iconoir-instagram"></i> Instagram
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-linkedin"></i>
-                                linkedin
+                                <i class="iconoir-linkedin"></i> LinkedIn
                             </a>
                         </li>
                     </ul>
@@ -142,6 +126,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer-area">
