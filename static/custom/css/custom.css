@@ -33,22 +33,9 @@
 
 }
 
-h1 {
-    font-size: 64px;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 0;
-    line-height: 1;
-    font-weight: 700;
-}
 
 .dot {
     color: red;
 }
 
-p {
-    text-align: center;
-    margin: 18px;
-    font-family: 'Muli', sans-serif;
-    font-weight: normal;
-}
 

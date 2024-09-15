@@ -3,19 +3,458 @@
 
 {% block title %} {{ Seo.title }} {% endblock title %}
 {% block meta %}
-    <meta name="description" content="{{ Seo.description }}">
-    <meta name="keywords" content="{{ Seo.keywords }}">
+<meta name="description" content="{{ Seo.description }}">
+<meta name="keywords" content="{{ Seo.keywords }}">
 {% endblock meta %}
 
 {% block section %}
 
-<section class="news-area">
-    <div class="custom-container">
-        <div class="d-flex card-h">
-            <div class="wrapper">
-                <h1>Coming soon<span class="dot">.</span></h1>
-                <p>We are building our website.</p>
+<!-- Team Hero -->
+<section class="hero-service-wrap hero-section-wrap hero-overview-wrap">
+    <div class="hero-section-content-wrap">
+        <img src="{% static 'assets/imgs/bg-shape-1.svg' %}" alt="Shape" class="bg-shape" />
+        <div class="custom-container">
+            <div class="hero-portfolio-body">
+                <div class="hero-section-content text-center">
+                    <h5 class="section-subtitle">Overview</h5>
+                    <h1 class="section-title fade-in">Overview of our company<br>
+                        journey of impact</h1>
+                    <p>Innovation is at the heart of our identity. We embrace emerging technologies,
+                        <br>
+                        foster a culture of creativity.
+                    </p>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Service -->
+<section class="company-service-area">
+    <div class="custom-container">
+        <div class="hero-service-about">
+
+            <img src="{% static 'assets/imgs/hero-overview-about.jpg' %}" alt="Service About" />
+            <div class="hero-service-about-body">
+                <p>Our team is a collective force of top talents, pros, experts, and visionaries from diverse fields.
+                    With a passion for excellence, our professionals bring a wealth of experience and knowledge to every
+                    project. At Slack, we are committed to delivering nothing short of excellence. From concept to
+                    implementation, we maintain the highest standards of quality and craftsmanship, leaving no room for
+                    compromise.</p>
+                <ul>
+                    <li>
+                        <i class="las la-check"></i> Managed Services and Products
+                    </li>
+                    <li>
+                        <i class="las la-check"></i> Flexibility and Adaptability
+                    </li>
+                    <li>
+                        <i class="las la-check"></i> Competitive Advantage
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Service Area -->
+<section class="service-area">
+    <div class="custom-container">
+        <div class="service-section-header section-header d-flex align-items-end justify-content-between">
+            <div class="left">
+                <h5 class="section-subtitle">WHAT WE’RE OFFERING</h5>
+                <h1 class="section-title">Dealing in all professional <br>IT services.</h1>
+            </div>
+            <p>One fundamental aspect of IT services is infrastructure management. This involves the design,
+                implementation, and maintenance of the hardware, software, networks, and servers.</p>
+        </div>
+
+        <div class="services-list">
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-1.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Development</a></h3>
+                <p>Our development is pixel perfect in all ways.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-2.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Woo Commerce</a></h3>
+                <p>We have a best team for your shopping websites.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-3.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">CRM Solutions</a></h3>
+                <p>We enhance customer experiences for success.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-4.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Web Design</a></h3>
+                <p>We create vibrant, intuitive and minimalist web</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-6.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Hardware Services</a></h3>
+                <p>We offers expert assistance
+                    for your IT issues.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Cloud Services</a></h3>
+                <p>we can provide all around
+                    the world.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-7.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Network Security</a></h3>
+                <p>We have a best team for your shopping websites.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-8.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Monitoring</a></h3>
+                <p>We enhance customer
+                    experiences for success.</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <img src="{% static 'assets/imgs/service-icon-9.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">Email Services</a></h3>
+                <p>We create vibrant, intuitive
+                    and minimalist web</p>
+            </div>
+            <div class="service-card simple-shadow">
+                <span class="service-badge">Free!</span>
+                <img src="{% static 'assets/imgs/service-icon-5.svg' %}" alt="Service Icon" class="service-icon" />
+                <h3><a href="#">IT Support</a></h3>
+                <p>We offers expert assistance for your IT issues.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About -->
+<section class="about-service3-area about-service6-area">
+    <div class="custom-container">
+        <div class="custom-row align-items-center">
+            <div class="content-box">
+                <div class="section-header">
+                    <h5 class="section-subtitle">OUR TRUE WORDS</h5>
+                    <h1 class="section-title">We’re best in all fields</h1>
+                    <p>At Slack, we are more than just a company, we are a catalyst for growth.</p>
+                </div>
+                <div class="content-body">
+                    <p>Our journey is guided by a clear vision - to be at the forefront of transformative solutions that
+                        shape industries and enrich lives. This vision is deeply rooted in our core values: excellence,
+                        innovation, integrity, and collaboration. </p>
+                    <p>Excellence is the hallmark of everything we do. From delivering cutting-edge technologies to
+                        providing unparalleled services, we are relentless in our pursuit of perfection. Our commitment
+                        to excellence drives us.</p>
+                    <ul>
+                        <li>
+                            <i class="las la-check"></i> Collaboration Tools
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Smart Reminders
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Requirement
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Task Management
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="img-box">
+                <img src="{% static 'assets/imgs/about-service-6.jpg' %}" alt="About" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Team -->
+<section class="our-team-4-area">
+    <div class="custom-container">
+        <div class="section-header">
+            <h5 class="section-subtitle">LEADERSHIP</h5>
+            <h1 class="section-title">Our Company Leading Members</h1>
+            <p>Are you busy putting out IT fires instead of focusing on your core business</p>
+        </div>
+
+        <div class="our-team-4-lists">
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-2.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Annie Coral</h3>
+                    <p>Team Lead</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-3.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Elsa Hermione</h3>
+                    <p>Business Analyst</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-4.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Katniss Leia</h3>
+                    <p>Senior UX Designer</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-5.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Rameez Savio</h3>
+                    <p>Senior Developer</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-6.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Sarah Anne</h3>
+                    <p>Swift Developer</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-1.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Henderson Mario</h3>
+                    <p>Back-End Developer</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-7.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Lee Cooper</h3>
+                    <p>Android Developer</p>
+                </div>
+            </div>
+            <div class="our-team-4-box">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/team-8.jpg' %}" alt="Team" />
+                </div>
+                <div class="content">
+                    <h3>Luna Matilda</h3>
+                    <p>Web Designer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Case Studio -->
+<section class="case-studio-area">
+    <img src="{% static 'assets/imgs/bg-shape-1.svg' %}" alt="Shape" class="animation-slide-left bg-shape" />
+    <div class="custom-container">
+        <div class="case-studio-header text-center">
+            <h5 class="section-subtitle">CASE STUDIES</h5>
+            <h1 class="section-title">Detailing of our products</h1>
+        </div>
+
+
+        <div class="case-studio">
+            <ul class="nav nav-pills case-studio-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="development-tab" data-bs-toggle="tab" href="#development"
+                        role="tab" aria-controls="development" aria-selected="true">Development</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="woo_commerce-tab" data-bs-toggle="tab" href="#woo_commerce" role="tab"
+                        aria-controls="woo_commerce" aria-selected="false">Woo Commerce</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="crm_solutions-tab" data-bs-toggle="tab" href="#crm_solutions"
+                        role="tab" aria-controls="crm_solutions" aria-selected="false">CRM Solutions</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="web_designing-tab" data-bs-toggle="tab" href="#web_designing"
+                        role="tab" aria-controls="web_designing" aria-selected="false">Web Designing</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="it_support-tab" data-bs-toggle="tab" href="#it_support" role="tab"
+                        aria-controls="it_support" aria-selected="false">IT Support</button>
+                </li>
+            </ul>
+            <div class="tab-content case-studio-tab-content">
+                <div class="tab-pane fade show active" id="development" role="tabpanel"
+                    aria-labelledby="development-tab">
+                    <div class="case-studio-body d-flex">
+                        <div class="left d-flex flex-1">
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Web Development</a>
+                                <img src="{% static 'assets/imgs/case-studio-1.jpg' %}" alt="Case Studio" />
+                            </div>
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Mobile Development</a>
+                                <img src="{% static 'assets/imgs/case-studio-2.jpg' %}" alt="Case Studio" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="case-studio-contents service-card card-h">
+                                <img src="{% static 'assets/imgs/service-icon-1.svg' %}" alt="ICON" />
+                                <h3>Development</h3>
+                                <p>Software development is a dynamic and rapidly evolving field that plays a
+                                    pivotal role in shaping the digital landscape we live in today. It
+                                    encompasses the processes, methodologies, and practices used to design,
+                                    create, deploy, and maintain software applications and systems.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="icon-right iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="woo_commerce" role="tabpanel" aria-labelledby="woo_commerce-tab">
+                    <div class="case-studio-body d-flex">
+                        <div class="left d-flex flex-1">
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">electro.</a>
+                                <img src="{% static 'assets/imgs/case-studio-3.jpg' %}" alt="Case Studio" />
+                            </div>
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Visit Site Now</a>
+                                <img src="{% static 'assets/imgs/case-studio-4.jpg' %}" alt="Case Studio" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="case-studio-contents service-card card-h">
+                                <img src="{% static 'assets/imgs/service-icon-2.svg' %}" alt="ICON" />
+                                <h3>Woo Commerce</h3>
+                                <p>Software development is a dynamic and rapidly evolving field that plays a
+                                    pivotal role in shaping the digital landscape we live in today. It
+                                    encompasses the processes, methodologies, and practices used to design,
+                                    create, deploy, and maintain software applications and systems.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="icon-right iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="crm_solutions" role="tabpanel" aria-labelledby="crm_solutions-tab">
+                    <div class="case-studio-body d-flex">
+                        <div class="left d-flex flex-1">
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">CRM Solutions</a>
+                                <img src="{% static 'assets/imgs/case-studio-5.jpg' %}" alt="Case Studio" />
+                            </div>
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Mobile Development</a>
+                                <img src="{% static 'assets/imgs/case-studio-6.jpg' %}" alt="Case Studio" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="case-studio-contents service-card card-h">
+                                <img src="{% static 'assets/imgs/service-icon-3.svg' %}" alt="ICON" />
+                                <h3>CRM Solutions</h3>
+                                <p>Software development is a dynamic and rapidly evolving field that plays a
+                                    pivotal role in shaping the digital landscape we live in today. It
+                                    encompasses the processes, methodologies, and practices used to design,
+                                    create, deploy, and maintain software applications and systems.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="icon-right iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="web_designing" role="tabpanel" aria-labelledby="web_designing-tab">
+                    <div class="case-studio-body d-flex">
+                        <div class="left d-flex flex-1">
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Web Designing</a>
+                                <img src="{% static 'assets/imgs/case-studio-7.jpg' %}" alt="Case Studio" />
+                            </div>
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Mobile Development</a>
+                                <img src="{% static 'assets/imgs/case-studio-8.jpg' %}" alt="Case Studio" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="case-studio-contents service-card card-h">
+                                <img src="{% static 'assets/imgs/service-icon-4.svg' %}" alt="ICON" />
+                                <h3>Web Designing</h3>
+                                <p>Software development is a dynamic and rapidly evolving field that plays a
+                                    pivotal role in shaping the digital landscape we live in today. It
+                                    encompasses the processes, methodologies, and practices used to design,
+                                    create, deploy, and maintain software applications and systems.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="icon-right iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="it_support" role="tabpanel" aria-labelledby="it_support-tab">
+                    <div class="case-studio-body d-flex">
+                        <div class="left d-flex flex-1">
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">IT Support</a>
+                                <img src="{% static 'assets/imgs/case-studio-9.jpg' %}" alt="Case Studio" />
+                            </div>
+                            <div class="case-studio-img-card simple-shadow">
+                                <a href="#" class="case-studio-cat">Mobile Development</a>
+                                <img src="{% static 'assets/imgs/case-studio-10.jpg' %}" alt="Case Studio" />
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="case-studio-contents service-card card-h">
+                                <img src="{% static 'assets/imgs/service-icon-5.svg' %}" alt="ICON" />
+                                <h3>IT Support</h3>
+                                <p>Software development is a dynamic and rapidly evolving field that plays a
+                                    pivotal role in shaping the digital landscape we live in today. It
+                                    encompasses the processes, methodologies, and practices used to design,
+                                    create, deploy, and maintain software applications and systems.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="icon-right iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-area">
+    <div class="custom-container">
+        <div class="cta-body text-center">
+            <img src="{% static 'assets/imgs/bg-shape-11.svg' %}" alt="Shape" class="animation-slide-left bg-shape" />
+            <div class="our-expert-team-box">
+                <div class="our-expert-team-box-inner d-flex align-items-center">
+                    <div class="imgs d-flex align-items-center">
+                        <img src="{% static 'assets/imgs/small-img-4.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-3.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-2.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-1.png' %}" alt="team" />
+                    </div>
+                </div>
+            </div>
+            <h2>Need any further assitance?</h2>
+            <p>Feel free to reach out for any inquiries or assistance.</p>
+            <a href="contact.html" class="theme-btn">Book an appointment now</a>
+
         </div>
     </div>
 </section>
