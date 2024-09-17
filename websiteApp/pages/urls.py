@@ -19,7 +19,10 @@ urlpatterns = [
     path('about_us', views.about, name='company.about'),
     path('partners', views.partners, name='company.partners'),
     path('careers', views.careers, name='company.careers'),
+
     path('events', views.events, name='company.events'),
+    path('event/slug', views.view_events, name='company.views_events'),
+    
     path('team', views.team, name='company.team'),
 
     path('blog', views.blog, name='company.blog'),
@@ -35,7 +38,10 @@ urlpatterns = [
     path('product/overview', views.product_overview, name='product.overview'),
     path('product/pricing', views.product_pricing, name='product.pricing'),
     path('product/features', views.product_features, name='product.features'),
+
     path('product/case-studies', views.product_case_studies, name='product.case_studies'),
+    path('product/case-studies/slug', views.view_case_studies, name='product.view_case_studies'),
+
     path('product/new-releases', views.product_new_releases, name='product.new_releases'),
     path('product/solutions', views.product_solutions, name='product.solutions'),
 

@@ -84,12 +84,22 @@ def events(request):
         'description': 'Stay updated with the latest events and activities hosted by CodeBright.',
         'keywords': 'events, company events, activities'
     }
-
     data = {
         'Seo' : seo
     }
-
     return render(request, 'websiteApp/company/events.html', data)
+
+def view_events(request):
+    seo = {
+        'title': 'Events - CodeBright',
+        'description': 'Stay updated with the latest events and activities hosted by CodeBright.',
+        'keywords': 'events, company events, activities'
+        }
+    data = {
+        'Seo' : seo
+        }
+    
+    return render(request, 'websiteApp/company/view_event.html', data)
 
 def team(request):
     seo = {
@@ -198,6 +208,19 @@ def product_case_studies(request):
     }
 
     return render(request, 'websiteApp/product/case_studies.html', data)
+
+def view_case_studies(request):
+    seo = {
+        'title': 'Case Studies - CodeBright',
+        'description': 'Read case studies showcasing how our product has helped clients.',
+        'keywords': 'case studies, success stories, client testimonials'
+    }
+
+    data = {
+        'Seo': seo
+    }
+
+    return render(request, 'websiteApp/product/view_case_studies.html', data)
 
 def product_new_releases(request):
     seo = {

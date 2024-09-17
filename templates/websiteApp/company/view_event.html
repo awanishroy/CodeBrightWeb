@@ -1,0 +1,91 @@
+{% extends "websiteApp/layouts/base.html" %}
+{% load static %}
+
+{% block title %} {{ Seo.title }} {% endblock title %}
+{% block meta %}
+<meta name="description" content="{{ Seo.description }}">
+<meta name="keywords" content="{{ Seo.keywords }}">
+{% endblock meta %}
+
+{% block section %}
+<!-- Event Details Hero -->
+<section class="hero-service-wrap hero-section-wrap hero-overview-wrap hero-event-details-wrap">
+    <div class="hero-section-content-wrap">
+        <div class="custom-container">
+            <div class="hero-portfolio-body">
+                <div class="hero-section-content text-center">
+                    <h5 class="section-subtitle">Events</h5>
+                    <h1 class="section-title fade-in">Slack cloud computing and
+                        cloud service undertaken</h1>
+                    <p>Small UK merchants, businesses, and other enterprises can now use
+                        Tap to Pay on service to replace payment terminals at point of sale</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Event Details -->
+<section class="event-details-area">
+    <div class="custom-container">
+        <div class="custom-row align-items-center">
+            <div class="img-box">
+                <img src="{% static 'assets/imgs/event-details.jpg' %}" alt="Event Details" />
+            </div>
+            <div class="content-box">
+                <div class="section-header">
+                    <h5 class="section-subtitle">FRI, APRIL 17</h5>
+                    <h1 class="section-title">Join Us at the Event</h1>
+                    <p>Join us for a cloud computing workshop, presented by
+                        Slack from 9 AM – 2 PM on April 15 </p>
+                </div>
+                <p>Be among the first to witness our cutting-edge products that push the boundaries of technology. From
+                    state-of-the-art gadgets to game-changing solutions.</p>
+
+                <ul>
+                    <li>
+                        <i class="lar la-clock"></i> 9 AM - 2 PM
+                    </li>
+                    <li>
+                        <i class="lar la-calendar"></i> 17-05-2023
+                    </li>
+                    <li>
+                        <i class="las la-map-marker"></i> New Embassy, Florida
+                    </li>
+                    <li>
+                        <i class="lar la-user"></i> Host - Serena lee
+                    </li>
+                </ul>
+
+                <a href="#" class="theme-btn">Book your tickets now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-area">
+    <div class="custom-container">
+        <div class="cta-body text-center">
+            <img src="{% static 'assets/imgs/bg-shape-11.svg' %}" alt="Shape" class="animation-slide-left bg-shape" />
+            <div class="our-expert-team-box">
+                <div class="our-expert-team-box-inner d-flex align-items-center">
+                    <div class="imgs d-flex align-items-center">
+                        <img src="{% static 'assets/imgs/small-img-4.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-3.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-2.png' %}" alt="team" />
+                        <img src="{% static 'assets/imgs/small-img-1.png' %}" alt="team" />
+                    </div>
+                </div>
+            </div>
+            <h2>Need any further assitance?</h2>
+            <p>Feel free to reach out for any inquiries or assistance.</p>
+            <a href="{% url "company.contact_us" %}" class="theme-btn">Book an appointment now</a>
+
+        </div>
+    </div>
+</section>
+
+{% endblock section %}

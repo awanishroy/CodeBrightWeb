@@ -175,86 +175,74 @@
 
 
 <!-- Our Team -->
-<section class="our-team-4-area">
+<section class="our-team-2-area">
     <div class="custom-container">
-        <div class="section-header">
-            <h5 class="section-subtitle">LEADERSHIP</h5>
-            <h1 class="section-title">Our Company Leading Members</h1>
-            <p>Are you busy putting out IT fires instead of focusing on your core business</p>
+        <div class="section-header our-team-2-header d-flex align-items-center justify-content-between w-full">
+            <img class="bg-shape" src="{% static 'assets/imgs/bg-shape-10.svg' %}" alt="Shape" />
+            <div class="left">
+                <h5 class="section-subtitle">OUR TEAM</h5>
+                <h1 class="section-title">Our professional experts</h1>
+                <p>Our team is a collective force of top talents, experts, and <br> visionaries from diverse fields.</p>
+            </div>
+            <a href="{% url 'company.contact_us' %}" class="theme-btn">Book an appointment with our expert now</a>
         </div>
 
-        <div class="our-team-4-lists">
-            <div class="our-team-4-box">
+        <div class="our-team-2-lists">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-2.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Annie Coral</h3>
-                    <p>Team Lead</p>
-                </div>
+                <h2>Priyesh Tiwari</h2>
+                <span class="designation">Business Manager</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-3.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Elsa Hermione</h3>
-                    <p>Business Analyst</p>
-                </div>
+                <h2>Rashmi</h2>
+                <span class="designation">Human Resource</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-4.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Katniss Leia</h3>
-                    <p>Senior UX Designer</p>
-                </div>
+                <h2>Garima Raj</h2>
+                <span class="designation">Python Developer</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-5.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Rameez Savio</h3>
-                    <p>Senior Developer</p>
-                </div>
+                <h2>Pradeep Kumar</h2>
+                <span class="designation">Sr. Python Developer</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-6.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Sarah Anne</h3>
-                    <p>Swift Developer</p>
-                </div>
+                <h2>Manas Rai</h2>
+                <span class="designation">Flutter Developer</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-1.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Henderson Mario</h3>
-                    <p>Back-End Developer</p>
-                </div>
+                <h2>Awanish rai</h2>
+                <span class="designation">Python Developer</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-7.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Lee Cooper</h3>
-                    <p>Android Developer</p>
-                </div>
+                <h2>Mayank Kumar</h2>
+                <span class="designation">Cloud Expert</span>
             </div>
-            <div class="our-team-4-box">
+            <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'assets/imgs/team-8.jpg' %}" alt="Team" />
+                    <img src="{% static 'default_user.png' %}" alt="Team" />
                 </div>
-                <div class="content">
-                    <h3>Luna Matilda</h3>
-                    <p>Web Designer</p>
-                </div>
+                <h2>Ankita Kumari</h2>
+                <span class="designation">Jr. Flutter Developer</span>
             </div>
         </div>
     </div>
@@ -453,7 +441,7 @@
             </div>
             <h2>Need any further assitance?</h2>
             <p>Feel free to reach out for any inquiries or assistance.</p>
-            <a href="contact.html" class="theme-btn">Book an appointment now</a>
+            <a href={% url "company.contact_us" %} class="theme-btn">Book an appointment now</a>
 
         </div>
     </div>
