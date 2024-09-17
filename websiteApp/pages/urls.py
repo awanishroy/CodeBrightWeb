@@ -21,8 +21,12 @@ urlpatterns = [
     path('careers', views.careers, name='company.careers'),
     path('events', views.events, name='company.events'),
     path('team', views.team, name='company.team'),
+
     path('blog', views.blog, name='company.blog'),
-    path('contact_us', views.contact_us, name='company.contact_us'),
+    path('blog/slug', views.blog_details, name='company.blog_details'),
+
+
+    path('contact-us', views.contact_us, name='company.contact_us'),
 
     # ========================= COMPANY END ============================
 
@@ -32,8 +36,8 @@ urlpatterns = [
     path('product/overview', views.product_overview, name='product.overview'),
     path('product/pricing', views.product_pricing, name='product.pricing'),
     path('product/features', views.product_features, name='product.features'),
-    path('product/case_studies', views.product_case_studies, name='product.case_studies'),
-    path('product/new_releases', views.product_new_releases, name='product.new_releases'),
+    path('product/case-studies', views.product_case_studies, name='product.case_studies'),
+    path('product/new-releases', views.product_new_releases, name='product.new_releases'),
     path('product/solutions', views.product_solutions, name='product.solutions'),
 
     # ========================== PRODUCT END ===========================
@@ -67,7 +71,7 @@ urlpatterns = [
 
     # =========================== OUR FIELDS START ======================
 
-    path('our_fields', views.our_fields, name='our_fields'),
+    path('our-fields', views.our_fields, name='our_fields'),
 
     # =========================== OUR FIELDS END ========================
 
@@ -78,5 +82,11 @@ urlpatterns = [
 
     # ============================ OUR FAQ END ==========================
 
+
+    # =========================== OTHERS START =========================
+
+    path('how-we-do', views.how_we_do, name='how_we_do'),
+
+    # ============================ OTHERS END ==========================
 
 ]

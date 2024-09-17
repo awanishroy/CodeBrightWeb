@@ -117,6 +117,19 @@ def blog(request):
 
     return render(request, 'websiteApp/company/blog.html', data)
 
+def blog_details(request):
+    seo = {
+        'title': 'Blog Details - CodeBright',
+        'description': 'Read the latest posts and updates from the CodeBright blog.',
+        'keywords': 'blog, company updates, articles'
+        }
+    data = {
+        'Seo' : seo
+    }
+
+    return render(request, 'websiteApp/company/blog_details.html', data)
+
+
 def contact_us(request):
     seo = {
         'title': 'Contact Us - CodeBright',
@@ -362,4 +375,21 @@ def faq(request):
     return render(request, 'websiteApp/faq/faq.html', data)
 
 # ============================================ FAQ END ============================================
+
+
+
+# =========================================== OTHERS START ==========================================
+
+def how_we_do(request):
+    seo = {
+        'title': 'How We Do - CodeBright',
+        'description': 'Learn about our process and how we deliver results.',
+        'keywords': 'how we do, process, results'
+        }
+    data = {
+        'Seo': seo
+        }
+    return render(request, 'websiteApp/others/how_we_do.html', data)
+
+# ============================================ OTHERS END ===========================================
 

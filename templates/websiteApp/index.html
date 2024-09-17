@@ -21,8 +21,8 @@
           <p>We provide the expertise and support to propel your
             business forward in the digital landscape.</p>
           <div class="btns-group d-flex">
-            <a href="#" class="theme-btn">Learn More</a>
-            <a href="contact.html" class="theme-btn2">Let's Talk
+            <a href="{% url "company.about" %}" class="theme-btn">Learn More</a>
+            <a href="{% url "company.contact_us" %}" class="theme-btn2">Let's Talk
               <i class="iconoir-arrow-up-right"></i>
             </a>
           </div>
@@ -49,7 +49,7 @@
           </div>
 
           <div class="bottom-content d-flex">
-            <a href="team.html" class="our-expert-team-box simple-shadow bounce-in delay-2">
+            <a href="{% url "company.team" %}" class="our-expert-team-box simple-shadow bounce-in delay-2">
               <div class="our-expert-team-box-inner d-flex align-items-center">
                 <div class="imgs imgs1 d-flex align-items-center">
                   <img src="{% static 'assets/imgs/small-img-4.png' %}" alt="team" />
@@ -139,7 +139,7 @@
             <h1 class="section-title">How we do</h1>
             <p>Save time and money with our powerful method.</p>
           </div>
-          <a href="how-we-do.html" class="theme-btn">
+          <a href="{% url "how_we_do" %}" class="theme-btn">
             Learn More
             <i class="iconoir-arrow-up-right"></i>
           </a>
@@ -699,7 +699,7 @@
         <div class="news-content">
           <h5 class="section-subtitle section-subtitle1">MOBILE DEVELOPMENT</h5>
           <h1 class="section-title">
-            <a href="blog-details.html">OpenAI launches new alignment division to tackle risks of superintelligent
+            <a href="{% url "company.blog_details" %}">OpenAI launches new alignment division to tackle risks of superintelligent
               AI</a>
           </h1>
           <p>Small UK merchants, businesses, and other enterprises can now use Tap to Pay on service to replace payment
@@ -712,7 +712,7 @@
               <i class="las la-check"></i> Smart Reminders
             </li>
           </ul>
-          <a href="blog-details.html" class="theme-btn">
+          <a href="{% url "company.blog_details" %}" class="theme-btn">
             <i class="iconoir-arrow-up-right"></i>
           </a>
         </div>
@@ -727,7 +727,7 @@
           <div class="news-item-body">
             <h5 class="section-subtitle">WEB DEVELOPMENT</h5>
             <h1 class="section-title">
-              <a href="blog-details.html">Bluebase launches Tap to Pay on smartphone for international and domestic
+              <a href="{% url "company.blog_details" %}">Bluebase launches Tap to Pay on smartphone for international and domestic
                 business</a>
             </h1>
             <p>Small UK merchants, businesses, and other enterprises can now use Tap to Pay on service to replace
@@ -746,7 +746,7 @@
                 <i class="las la-check"></i> Task Management
               </li>
             </ul>
-            <a href="blog-details.html" class="theme-btn">
+            <a href="{% url "company.blog_details" %}" class="theme-btn">
               <i class="iconoir-arrow-up-right"></i>
             </a>
           </div>
@@ -758,7 +758,7 @@
           <div class="news-item-body">
             <h5 class="section-subtitle">CLOUD COMPUTING</h5>
             <h1 class="section-title">
-              <a href="blog-details.html">Google Bard launches in EU, overcoming data privacy concerns in the region</a>
+              <a href="{% url "company.blog_details" %}">Google Bard launches in EU, overcoming data privacy concerns in the region</a>
             </h1>
             <p>Small UK merchants, businesses, and other enterprises can now use Tap to Pay on service to replace
               payment terminals at point of sale.</p>
@@ -773,7 +773,7 @@
                 <i class="las la-check"></i> Requirement
               </li>
             </ul>
-            <a href="blog-details.html" class="theme-btn">
+            <a href="{% url "company.blog_details" %}" class="theme-btn">
               <i class="iconoir-arrow-up-right"></i>
             </a>
           </div>

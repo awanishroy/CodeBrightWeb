@@ -1,0 +1,118 @@
+{% extends "websiteApp/layouts/base.html" %}
+{% load static %}
+
+{% block title %} {{ Seo.title }} {% endblock title %}
+{% block meta %}
+    <meta name="description" content="{{ Seo.description }}">
+    <meta name="keywords" content="{{ Seo.keywords }}">
+{% endblock meta %}
+
+{% block section %}
+
+<section class="hero-service-wrap hero-section-wrap hero-overview-wrap hero-how-we-do-wrap">
+    <div class="hero-section-content-wrap">
+        <div class="custom-container">
+            <div class="hero-portfolio-body">
+                <div class="hero-section-content text-center">
+                    <h5 class="section-subtitle">How We Do</h5>
+                    <h1 class="section-title fade-in">Our phases in software
+                        engineering</h1>
+                    <p>Software development is a multifaceted process that involves 
+                        various features and efficient software solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="about-area how-we-do-style-2">
+    <div class="custom-container">
+        <div class="about-timeline-body">
+            <div class="about-timeline">
+                
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">01</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">Brainstroming Ideas</a></h3>
+                            <p>It is a dynamic and collaborative technique that unleashes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">02</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">Product Design</a></h3>
+                            <p>It is a dynamic and multi-faceted process that revolves </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">03</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">Front-End Development</a></h3>
+                            <p>Is the art and science of creating visually appealing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">04</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">SEO Optimization</a></h3>
+                            <p>It is an indispensable strategy for businesses and website owners.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">05</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-5.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">Back-End Development</a></h3>
+                            <p>is the engine that powers the functionality </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-timeline-item">
+                    <div class="about-timeline-item-inner">
+                        <img src="{% static 'assets/imgs/bg-shape-2.svg' %}" alt="Shape" class="line-shape">
+                        <span class="number">06</span>
+                        <div class="icon-box">
+                            <img src="{% static 'assets/imgs/hwd-icon-6.svg' %}" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <h3><a href="how-we-do-single.html">Digital Marketing</a></h3>
+                            <p>This innovative approach utilizes digital and online platforms</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock section %}
