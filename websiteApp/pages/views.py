@@ -129,7 +129,6 @@ def blog_details(request):
 
     return render(request, 'websiteApp/company/blog_details.html', data)
 
-
 def contact_us(request):
     seo = {
         'title': 'Contact Us - CodeBright',

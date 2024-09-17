@@ -25,7 +25,6 @@ urlpatterns = [
     path('blog', views.blog, name='company.blog'),
     path('blog/slug', views.blog_details, name='company.blog_details'),
 
-
     path('contact-us', views.contact_us, name='company.contact_us'),
 
     # ========================= COMPANY END ============================
