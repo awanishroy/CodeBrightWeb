@@ -154,17 +154,18 @@ def contact_us(request):
 def contact_us_post(request):
     if request.method == "POST":
         # Retrieve form data
-        PR_FIRST_NAME = request.POST.get('firstName')
-        PR_LAST_NAME = request.POST.get('lastName')
-        PR_EMAIL = request.POST.get('emailAddress')
-        PR_PHONE = request.POST.get('phone')
+        # first_name = request.POST.get('firstName')
+        # last_name = request.POST.get('lastName')
+        # email_address = request.POST.get('emailAddress')
+        # phone = request.POST.get('phone')
+        # message = request.POST.get('PR_MESSAGE')  # Assuming you want to capture this as well
 
-        # # Save form data to the database
-        # data = CbtBharatEcoFuels(
-        #     PR_FIRST_NAME=PR_FIRST_NAME,
-        #     PR_LAST_NAME=PR_LAST_NAME,
-        #     PR_EMAIL=PR_EMAIL,
-        #     PR_PHONE=PR_PHONE,
+        # You can save the form data to the database if needed
+        # Example: data = CbtBharatEcoFuels(
+        #     PR_FIRST_NAME=first_name,
+        #     PR_LAST_NAME=last_name,
+        #     PR_EMAIL=email_address,
+        #     PR_PHONE=phone,
         # )
         # data.save()
 
@@ -173,7 +174,7 @@ def contact_us_post(request):
     else:
         messages.error(request, 'Something went wrong. Please try again.')
         return redirect('index')
-        
+
 
 # ======================================== COMPANY END ========================================
 
