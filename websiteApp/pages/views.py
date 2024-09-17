@@ -151,6 +151,30 @@ def contact_us(request):
         
     return render(request, 'websiteApp/company/contact_us.html', data)
 
+def contact_us_post(request):
+    if request.method == "POST":
+        # Retrieve form data
+        PR_FIRST_NAME = request.POST.get('firstName')
+        PR_LAST_NAME = request.POST.get('lastName')
+        PR_EMAIL = request.POST.get('emailAddress')
+        PR_PHONE = request.POST.get('phone')
+
+        # # Save form data to the database
+        # data = CbtBharatEcoFuels(
+        #     PR_FIRST_NAME=PR_FIRST_NAME,
+        #     PR_LAST_NAME=PR_LAST_NAME,
+        #     PR_EMAIL=PR_EMAIL,
+        #     PR_PHONE=PR_PHONE,
+        # )
+        # data.save()
+
+        messages.success(request, 'Thank you for your interest in Code Bright Technologies. Our team will reach out to you soon!')
+        return redirect('index')
+    else:
+        messages.error(request, 'Something went wrong. Please try again.')
+        return redirect('index')
+        
+
 # ======================================== COMPANY END ========================================
 
 

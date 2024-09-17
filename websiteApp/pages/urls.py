@@ -29,6 +29,8 @@ urlpatterns = [
     path('blog/slug', views.blog_details, name='company.blog_details'),
 
     path('contact-us', views.contact_us, name='company.contact_us'),
+    path('contact-us-post', views.contact_us_post, name='company.contact_us_post'),
+
 
     # ========================= COMPANY END ============================
 
