@@ -1,9 +1,9 @@
 import requests
-
+from django.conf import settings
 
 def site_data(request):
     # API endpoint
-    api_url = "http://apis.codebright.in/portfolio-api/all-website-data"
+    api_url = settings.API_URL+"/portfolio-api/all-website-data"
     
     payload = {
         "PR_WEBSITE_ID": 1
@@ -22,3 +22,6 @@ def site_data(request):
     except requests.RequestException as e:
         print(f"An error occurred: {e}")
         return '__'
+    
+def api_url(request):
+    return {'api_url': settings.API_URL}
