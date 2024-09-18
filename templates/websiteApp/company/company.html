@@ -55,39 +55,14 @@
 <!-- Client Section -->
 <section class="client-area">
     <div class="clients clients-marquee d-flex align-items-center">
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo1.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo3.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo4.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo5.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo3.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo4.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo5.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo simple-shadow">
-            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-        </div>
-        <div class="client-logo" style="min-width: 0;"></div>
+      {% for client  in site_data.DATA.PR_CLIENT  %}
+      <div class="client-logo simple-shadow">
+        <img src="{{api_url}}{{client.PR_ICON}}" alt="Client" />
+      </div>
+      {% endfor %}
+      <div class="client-logo" style="min-width: 0;"></div>
     </div>
-</section>
+  </section>
 
 <!-- Service -->
 <section class="company-service-area">
@@ -182,62 +157,15 @@
         </div>
 
         <div class="our-team-2-lists">
+            {% for team  in site_data.DATA.PR_TEAM  %}
             <div class="our-team-2-card">
                 <div class="img-box">
-                    <img src="{% static 'users/priyesh.jpeg' %}" alt="Priyesh Tiwari" />
+                    <img src="{{api_url}}{{team.PR_PHOTO}}" alt="Priyesh Tiwari" />
                 </div>
-                <h2>Priyesh Tiwari</h2>
-                <span class="designation">Business Manager</span>
+                <h2>{{team.PR_NAME}}</h2>
+                <span class="designation">{{team.PR_ROLE}}</span>
             </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/rashmi.jpeg' %}" alt="Rashmi" />
-                </div>
-                <h2>Rashmi</h2>
-                <span class="designation">Human Resource</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/garima.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Garima Raj</h2>
-                <span class="designation">Python Developer</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/pradeep.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Pradeep Kumar</h2>
-                <span class="designation">Sr. Python Developer</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/manas.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Manas Rai</h2>
-                <span class="designation">Flutter Developer</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/awanish.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Awanish rai</h2>
-                <span class="designation">Python Developer</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/mayank.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Mayank Kumar</h2>
-                <span class="designation">Cloud Expert</span>
-            </div>
-            <div class="our-team-2-card">
-                <div class="img-box">
-                    <img src="{% static 'users/ankita.jpeg' %}" alt="Team" />
-                </div>
-                <h2>Ankita Kumari</h2>
-                <span class="designation">Jr. Flutter Developer</span>
-            </div>
+        {% endfor %}
         </div>
     </div>
 </section>

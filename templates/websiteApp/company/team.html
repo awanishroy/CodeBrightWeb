@@ -38,87 +38,17 @@
                 </div>
                 
                 <div class="our-team-4-lists">
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/priyesh.jpeg' %}" alt="Team" />
+                    {% for team  in site_data.DATA.PR_TEAM  %}
+                        <div class="our-team-4-box">
+                            <div class="img-box">
+                                <img src="{{api_url}}{{team.PR_PHOTO}}" alt="Team" />
+                            </div>
+                            <div class="content">
+                                <h3>{{team.PR_NAME}}</h3>
+                                <p>{{team.PR_ROLE}}</p>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h3>Priyesh Tiwari</h3>
-                            <p>Business Manager</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/rashmi.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Rashmi</h3>
-                            <p>Human Resource</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/pradeep.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Pradeep Kumar</h3>
-                            <p>Sr. Python Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/garima.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Garima Raj</h3>
-                            <p>Jr. Python Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/awanish.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Awanish Rai</h3>
-                            <p>Python Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/manas.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Manas Rai</h3>
-                            <p>Flutter Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/mayank.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Mayank Kumar</h3>
-                            <p>Jr. Python Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/prabhat.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Prabhat Kumar</h3>
-                            <p>Back-End Developer</p>
-                        </div>
-                    </div>
-                    <div class="our-team-4-box">
-                        <div class="img-box">
-                            <img src="{% static 'users/ankita.jpeg' %}" alt="Team" />
-                        </div>
-                        <div class="content">
-                            <h3>Ankita Kumari</h3>
-                            <p>Android Developer</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

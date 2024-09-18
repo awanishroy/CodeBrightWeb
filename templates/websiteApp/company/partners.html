@@ -28,39 +28,14 @@
                 <!-- Client Section -->
                 <section class="client-area">
                     <div class="clients clients-marquee d-flex align-items-center">
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo1.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo3.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo4.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo5.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo3.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo4.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo5.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo simple-shadow">
-                            <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-                        </div>
-                        <div class="client-logo" style="min-width: 0;"></div>
+                      {% for client  in site_data.DATA.PR_CLIENT  %}
+                      <div class="client-logo simple-shadow">
+                        <img src="{{api_url}}{{client.PR_ICON}}" alt="Client" />
+                      </div>
+                      {% endfor %}
+                      <div class="client-logo" style="min-width: 0;"></div>
                     </div>
-                </section>
+                  </section>
             </div>
         </section>
 
@@ -116,36 +91,14 @@
                         <div class="partners-list-wrap">
                             
                             <div class="partners-list-inner">
+                                {% for client  in site_data.DATA.PR_CLIENT  %}
                                 <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo7.svg' %}" alt="Client" />
+                                    <img src="{{api_url}}{{client.PR_ICON}}" alt="Client" />
                                 </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo8.svg' %}" alt="Client" />
-                                </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo9.svg' %}" alt="Client" />
-                                </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo10.svg' %}" alt="Client" />
-                                </div>
+                                {% endfor %}
                             </div>
 
-                            <div class="partners-list-inner">
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo11.svg' %}" alt="Client" />
-                                </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo2.svg' %}" alt="Client" />
-                                </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo12.svg' %}" alt="Client" />
-                                </div>
-                                <div class="partner-box">
-                                    <img src="{% static 'assets/imgs/client-logo13.svg' %}" alt="Client" />
-                                </div>
-                            </div>
-
-                            <div class="partners-list-inner">
+                            {% comment %} <div class="partners-list-inner">
                                 <div class="partner-box">
                                     <img src="{% static 'assets/imgs/client-logo14.svg' %}" alt="Client" />
                                 </div>
@@ -158,7 +111,7 @@
                                 <div class="partner-box">
                                     <img src="{% static 'assets/imgs/client-logo16.svg' %}" alt="Client" />
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
 
                         </div>
                     </div>
