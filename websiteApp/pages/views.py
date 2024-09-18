@@ -3,6 +3,10 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.contrib import messages
+import requests
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.http import require_http_methods
 
 
 # ======================================== HOME PAGE START =====================================
@@ -151,29 +155,45 @@ def contact_us(request):
         
     return render(request, 'websiteApp/company/contact_us.html', data)
 
+@csrf_protect
+@require_http_methods(["POST"])
 def contact_us_post(request):
-    if request.method == "POST":
-        # Retrieve form data
-        # first_name = request.POST.get('firstName')
-        # last_name = request.POST.get('lastName')
-        # email_address = request.POST.get('emailAddress')
-        # phone = request.POST.get('phone')
-        # message = request.POST.get('PR_MESSAGE')  # Assuming you want to capture this as well
+    api_url = "https://apis.codebright.in/portfolio-api/contact-us-message-add"
+    
+    # Extract form data from request.POST
+    payload = {
+        "PR_WEBSITE_ID": 1,
+        "PR_FIRST_NAME": request.POST.get('firstName'),
+        "PR_LAST_NAME": request.POST.get('lastName'),
+        "PR_EMAIL": request.POST.get('emailAddress'),
+        "PR_PHONE": request.POST.get('phone'),
+        "PR_MESSAGE": request.POST.get('PR_MESSAGE'),
+        "PR_PRIVACY_POLICY_ACCEPT": request.POST.get('privacy_policy_accept') == 'on'
+    }
 
-        # You can save the form data to the database if needed
-        # Example: data = CbtBharatEcoFuels(
-        #     PR_FIRST_NAME=first_name,
-        #     PR_LAST_NAME=last_name,
-        #     PR_EMAIL=email_address,
-        #     PR_PHONE=phone,
-        # )
-        # data.save()
-
-        messages.success(request, 'Thank you for your interest in Code Bright Technologies. Our team will reach out to you soon!')
-        return redirect('index')
-    else:
-        messages.error(request, 'Something went wrong. Please try again.')
-        return redirect('index')
+    try:
+        response = requests.post(api_url, json=payload)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        
+        if response.status_code == 200:
+            site_data = response.json()
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Thank you for your interest in Code Bright Technologies. Our team will reach out to you soon!',
+                'site_data': site_data
+            })
+        else:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'An error occurred while processing your request. Please try again later.'
+            }, status=500)
+    
+    except requests.RequestException as e:
+        print(f"API request failed: {str(e)}")
+        return JsonResponse({
+            'status': 'error',
+            'message': 'An error occurred while processing your request. Please try again later.'
+        }, status=500)
 
 
 # ======================================== COMPANY END ========================================

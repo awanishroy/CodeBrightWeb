@@ -8,9 +8,10 @@
                 <div class="contact-form-body">
                     <h5 class="section-subtitle">Contact</h5>
                     <h1 class="section-title">Let's Get in Touch</h1>
-                    <p>You can reach us anytime via <a href="mailto:hr@codebright.in">hr@codebright.in {{site_data.DATA.PR_TEAM}}</a></p>
-                    <form action="{% url 'company.contact_us_post' %}" method="POST" id="contact_us"
-                        class="contact-form">
+                    <p>You can reach us anytime via <a
+                            href="mailto:hr@codebright.in">{{site_data.DATA.PR_COMPANY_EMAIL}}</a></p>
+                    <!-- Contact Form HTML -->
+                    <form id="contact_us" class="contact-form">
                         {% csrf_token %}
                         <input id="PR_WEBSITE" type="hidden" name="PR_WEBSITE" value="1" />
                         <div class="input-row">
@@ -32,7 +33,7 @@
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group form-floating ">
+                            <div class="input-group form-floating">
                                 <input class="form-control" id="phone" type="text" name="phone"
                                     placeholder="Your Number" />
                             </div>
@@ -44,8 +45,9 @@
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group input-checkbox  d-flex align-items-center">
-                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept" class="me-2">
+                            <div class="input-group input-checkbox d-flex align-items-center">
+                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept"
+                                    class="me-2">
                                 <label for="privacy_policy_accept" class="form-check-label">
                                     You agree to our <a href="#">terms and conditions.</a>
                                 </label>
@@ -131,7 +133,6 @@
 <script>
     $(document).ready(function () {
         $('#contact_us').validate({
-            // Define validation rules
             rules: {
                 firstName: {
                     required: true,
@@ -155,8 +156,10 @@
                     required: true,
                     minlength: 10
                 },
+                privacy_policy_accept: {
+                    required: true
+                }
             },
-            // Define error messages
             messages: {
                 firstName: {
                     required: "Please enter your first name.",
@@ -180,20 +183,73 @@
                     required: "Please leave a message.",
                     minlength: "Your message must be at least 10 characters long."
                 },
+                privacy_policy_accept: {
+                    required: "Please accept the terms and conditions."
+                }
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
-                element.closest('.form-floating').append(error);
+                element.closest('.input-group').append(error);
             },
             highlight: function (element, errorClass, validClass) {
                 $(element).addClass('is-invalid').removeClass('is-valid');
             },
             unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid').addClass('is-valid');
-            }
-        });
+            },
+            submitHandler: function (form) {
+            var formData = $(form).serialize();
+            $.ajax({
+                url: "{% url 'company.contact_us_post' %}",
+                type: "POST",
+                data: formData,
+                success: function (response) {
+                    $('#contact_us')[0].reset();
+                    if (response.status === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: response.message,
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInUp animate__faster'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutDown animate__faster'
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: response.message || 'Something went wrong!',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInUp animate__faster'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutDown animate__faster'
+                            }
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'An error occurred. Please try again later.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInUp animate__faster'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutDown animate__faster'
+                        }
+                    });
+                    console.error(xhr.responseText);
+                }
+            });
+            return false;
+        }
     });
+});
 </script>
 
 <!-- Footer -->
