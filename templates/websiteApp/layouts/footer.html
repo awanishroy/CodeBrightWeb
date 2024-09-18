@@ -8,51 +8,52 @@
                 <div class="contact-form-body">
                     <h5 class="section-subtitle">Contact</h5>
                     <h1 class="section-title">Let's Get in Touch</h1>
-                    <p>You can reach us anytime via <a href="mailto:hr@codebright.in">hr@codebright.in</a></p>
-                    <form action="https://apis.codebright.in/portfolio-api/contact-us-message-add" method="POST" class="contact-form">
+                    <p>You can reach us anytime via <a href="mailto:hr@codebright.in">hr@codebright.in {{site_data.DATA.PR_TEAM}}</a></p>
+                    <form action="{% url 'company.contact_us_post' %}" method="POST" id="contact_us"
+                        class="contact-form">
+                        {% csrf_token %}
                         <input id="PR_WEBSITE" type="hidden" name="PR_WEBSITE" value="1" />
                         <div class="input-row">
-                            <div class="input-group">
-                                <label for="PR_NAME">Full Name</label>
-                                <input id="PR_NAME" type="text" name="PR_NAME" placeholder="Your Full Name" />
+                            <div class="input-group form-floating">
+                                <input class="form-control" id="firstName" type="text" name="firstName"
+                                    placeholder="Your First Name" />
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group">
-                                <label for="PR_EMAIL">Email</label>
-                                <input id="PR_EMAIL" type="email" name="PR_EMAIL" placeholder="Your Email" />
+                            <div class="input-group form-floating">
+                                <input class="form-control" id="lastName" type="text" name="lastName"
+                                    placeholder="Your Last Name" />
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group phone-number">
-                                <select class="number-prefix" name="number-prefix">
-                                    <option value="ind">IND</option>
-                                </select>
-                                <label for="PR_PHONE">Phone Number</label>
-                                <input id="PR_PHONE" type="text" name="PR_PHONE" placeholder="Your Number" />
+                            <div class="input-group form-floating">
+                                <input class="form-control" id="emailAddress" type="email" name="emailAddress"
+                                    placeholder="Your Email" />
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group">
-                                <label for="PR_MESSAGE">Message</label>
-                                <textarea name="PR_MESSAGE" id="PR_MESSAGE" placeholder="Leave us a message...."></textarea>
+                            <div class="input-group form-floating ">
+                                <input class="form-control" id="phone" type="text" name="phone"
+                                    placeholder="Your Number" />
                             </div>
                         </div>
                         <div class="input-row">
-                            <div class="input-group input-checkbox">
-                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept">
-                                <label for="privacy_policy_accept">You agree to our <a href="#">terms and conditions.</a></label>
+                            <div class="input-group form-floating">
+                                <textarea name="PR_MESSAGE" id="PR_MESSAGE"
+                                    placeholder="Leave us a message...."></textarea>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group input-checkbox  d-flex align-items-center">
+                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept" class="me-2">
+                                <label for="privacy_policy_accept" class="form-check-label">
+                                    You agree to our <a href="#">terms and conditions.</a>
+                                </label>
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
                                 <button id="submit" class="theme-btn" type="submit">Get Started</button>
-                            </div>
-                        </div>
-                        <!-- Alert Message -->
-                        <div class="input-row">
-                            <div class="input-group alert-notification">
-                                <div id="alert-message" class="alert-msg"></div>
                             </div>
                         </div>
                     </form>
@@ -127,6 +128,73 @@
     </div>
 </section>
 
+<script>
+    $(document).ready(function () {
+        $('#contact_us').validate({
+            // Define validation rules
+            rules: {
+                firstName: {
+                    required: true,
+                    minlength: 2
+                },
+                lastName: {
+                    required: true,
+                    minlength: 2
+                },
+                emailAddress: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 15
+                },
+                PR_MESSAGE: {
+                    required: true,
+                    minlength: 10
+                },
+            },
+            // Define error messages
+            messages: {
+                firstName: {
+                    required: "Please enter your first name.",
+                    minlength: "Your first name must consist of at least 2 characters."
+                },
+                lastName: {
+                    required: "Please enter your last name.",
+                    minlength: "Your last name must consist of at least 2 characters."
+                },
+                emailAddress: {
+                    required: "Please enter your email address.",
+                    email: "Please enter a valid email address."
+                },
+                phone: {
+                    required: "Please enter your phone number.",
+                    digits: "Please enter only digits.",
+                    minlength: "Your phone number must be at least 10 digits long.",
+                    maxlength: "Your phone number can't exceed 15 digits."
+                },
+                PR_MESSAGE: {
+                    required: "Please leave a message.",
+                    minlength: "Your message must be at least 10 characters long."
+                },
+            },
+            errorElement: 'div',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-floating').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
+    });
+</script>
 
 <!-- Footer -->
 <footer class="footer-area">
@@ -259,7 +327,8 @@
                             <i class="iconoir-linkedin"></i>
                         </a></li>
                 </ul>
-                <p>&copy; 2023 All rights reserved by <a href="https://themeforest.net/user/wordpressriver/portfolio">Codebright</a></p>
+                <p>&copy; 2023 All rights reserved by <a
+                        href="https://themeforest.net/user/wordpressriver/portfolio">Codebright</a></p>
             </div>
         </div>
     </div>
