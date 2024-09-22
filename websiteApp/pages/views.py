@@ -4,6 +4,9 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.contrib import messages
 import requests
+from websiteApp.pages.serializers import *
+from rest_framework import viewsets , status
+from rest_framework.response import Response
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_http_methods
@@ -25,7 +28,6 @@ def index(request):
     return render(request, 'websiteApp/index.html', data)
 
 # ======================================== HOME PAGE END =======================================
-
 
 
 # ======================================== COMPANY START ========================================
@@ -460,3 +462,192 @@ def how_we_do(request):
 
 # ============================================ OTHERS END ===========================================
 
+
+class cbtBookViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateBookData(self, request , PR_BOOK_ID = None):
+        pass
+        try:
+            data = request.data
+            if PR_BOOK_ID != None:
+                try:
+                    instance = CbtBookData.objects.get(PR_BOOK_ID=PR_BOOK_ID)
+                    serializer = CbtBookDataSerializer(instance, data=data, partial=True)
+                except CbtBookData.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtBookDataSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtClassViewSet(viewsets.ModelViewSet):
+    
+    # def addUpdateClassData(self, request):
+    #     try:
+    #         serializer = CbtClassesSerializer(data=request.data)
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             return Response({'message': 'success'}, status=status.HTTP_201_CREATED)
+    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #     except Exception as e:
+    #         return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
+    def addUpdateClassData(self, request , PR_CLASS_ID = None):
+        try:
+            data = request.data
+            if PR_CLASS_ID != None:
+                try:
+                    instance = CbtClasses.objects.get(PR_CLASS_ID=PR_CLASS_ID)
+                    serializer = CbtClassesSerializer(instance, data=data, partial=True)
+                except CbtClasses.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtClassesSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtBoardViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateBoardData(self,request , PR_BOARD_ID = None):
+        try:
+            data = request.data
+            if PR_BOARD_ID != None:
+                try:
+                    instance = CbtBoard.objects.get(PR_BOARD_ID=PR_BOARD_ID)
+                    serializer = CbtBoardSerializer(instance, data=data, partial=True)
+                except CbtBoard.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtBoardSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtSeriesViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateSeriesData(self,request, PR_SERIES_ID = None):
+        try:
+            data = request.data
+            if PR_SERIES_ID != None:
+                try:
+                    instance = CbtSeries.objects.get(PR_SERIES_ID=PR_SERIES_ID)
+                    serializer = CbtSeriesSerializer(instance, data=data, partial=True)
+                except CbtSeries.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtSeriesSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtAuthorViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateAuthorData(self,request ,PR_AUTHOR_ID = None):
+        try:
+            data = request.data
+            if PR_AUTHOR_ID != None:
+                try:
+                    instance = CbtAuthor.objects.get(PR_AUTHOR_ID=PR_AUTHOR_ID)
+                    serializer = CbtAuthorSerializer(instance, data=data, partial=True)
+                except CbtAuthor.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtAuthorSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtEditionViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateEditionData(self,request ,PR_EDITION_ID = None):
+        try:
+            data = request.data
+            if PR_EDITION_ID != None:
+                try:
+                    instance = CbtEdition.objects.get(PR_EDITION_ID=PR_EDITION_ID)
+                    serializer = CbtEditionSerializer(instance, data=data, partial=True)
+                except CbtEdition.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtEditionSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtImprintViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateImprintData(self,request,PR_IMPRINT_ID):
+        try:
+            data = request.data
+            if PR_IMPRINT_ID != None:
+                try:
+                    instance = CbtBoard.objects.get(PR_IMPRINT_ID=PR_IMPRINT_ID)
+                    serializer = CbtClassesSerializer(instance, data=data, partial=True)
+                except CbtBoard.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtClassesSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+class cbtBookTypeViewSet(viewsets.ModelViewSet):
+    
+    def addUpdateBookTypeData(self,request,PR_BOOK_TYPE_ID):
+        try:
+            data = request.data
+            if PR_BOOK_TYPE_ID != None:
+                try:
+                    instance = CbtBoard.objects.get(PR_BOOK_TYPE_ID=PR_BOOK_TYPE_ID)
+                    serializer = CbtClassesSerializer(instance, data=data, partial=True)
+                except CbtBoard.DoesNotExist:
+                    return Response({'message': 'Data Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                serializer = CbtClassesSerializer(data=data)
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        

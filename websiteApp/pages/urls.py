@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 
+
 urlpatterns = [
 
     # ========================== HOME START ===========================
@@ -90,10 +91,37 @@ urlpatterns = [
     # ============================ OUR FAQ END ==========================
 
 
-    # =========================== OTHERS START =========================
+    # =========================== OTHERS START ==========================
 
     path('how-we-do', views.how_we_do, name='how_we_do'),
 
-    # ============================ OTHERS END ==========================
+    # ============================ OTHERS END ===========================
+
+    path('add-book', views.cbtBookViewSet.as_view({'post': 'addUpdateBookData'})),
+    path('update-book/<int:PR_BOOK_ID>', views.cbtBookViewSet.as_view({'post': 'addUpdateBookData'})),
+    
+    path('import-excel-data', views.cbtBookViewSet.as_view({'get': 'importExcelData'})),
+
+    path('add-class', views.cbtClassViewSet.as_view({'post': 'addUpdateClassData'})),
+    path('update-class/<int:PR_CLASS_ID>', views.cbtClassViewSet.as_view({'post': 'addUpdateClassData'})),
+
+    path('add-board', views.cbtBoardViewSet.as_view({'post': 'addUpdateBoardData'})),
+    path('update-board/<int:PR_BOARD_ID>', views.cbtBoardViewSet.as_view({'post': 'addUpdateBoardData'})),
+    
+    path('add-series', views.cbtSeriesViewSet.as_view({'post': 'addUpdateSeriesData'})),
+    path('update-series/<int:PR_SERIES_ID>', views.cbtSeriesViewSet.as_view({'post': 'addUpdateSeriesData'})),
+    
+    path('add-author', views.cbtAuthorViewSet.as_view({'post': 'addUpdateAuthorData'})),
+    path('update-author/<int:PR_AUTHOR_ID>', views.cbtAuthorViewSet.as_view({'post': 'addUpdateAuthorData'})),
+    
+    path('add-edition', views.cbtEditionViewSet.as_view({'post': 'addUpdateEditionData'})),
+    path('update-edition/<int:PR_EDITION_ID>', views.cbtEditionViewSet.as_view({'post': 'addUpdateEditionData'})),
+    
+    path('add-imprint', views.cbtImprintViewSet.as_view({'post': 'addUpdateImprintData'})),
+    path('update-imprint/<int:PR_IMPRINT_ID>', views.cbtImprintViewSet.as_view({'post': 'addUpdateImprintData'})),
+    
+    path('add-book-type', views.cbtBookTypeViewSet.as_view({'post': 'addUpdateBookTypeData'})),
+    path('update-book-type', views.cbtBookTypeViewSet.as_view({'post': 'addUpdateBookTypeData'})),
+
 
 ]
