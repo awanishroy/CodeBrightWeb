@@ -501,8 +501,33 @@ class cbtBookViewSet(viewsets.ModelViewSet):
             
             # Fill missing values with specified defaults
             df.fillna({
-                'Title': '', 'Sub Title': '', 'ISBN': '', 'BookType': '', 'Company': '','Book Code': '', 'Copyright': '', 'Date Of Release': pd.NaT, 'Binding': '','Language': '', 'Pages': 0, 'TrimSize': '', 'Weight': 0.0, 'List Price': 0.0,
-                'Discount': 0.0, 'BookNumber': 0, 'ClassLevel': '', 'ProductDivision': '','BroadSubject': '', 'Detailed Subject': '', 'ProductDescription': ''}, inplace=True)
+                'Title': '', 
+                'Sub Title': '', 
+                'ISBN': '', 
+                'Board Id':'', 
+                'Class Id':'' , 
+                'Series Id':'', 
+                'BookType Id': '' ,
+                'Imprint':'' ,
+                'Author':'', 
+                'Edition':'', 
+                'Company': '',
+                'Book Code': '', 
+                'Copyright': '', 
+                'Date Of Release': pd.NaT, 
+                'Binding': '',
+                'Language': '', 
+                'Pages': '', 
+                'TrimSize': '', 
+                'Weight': '', 
+                'List Price': '',
+                'Discount': '', 
+                'BookNumber': '', 
+                'ClassLevel': '', 
+                'ProductDivision': '',
+                'BroadSubject': '', 
+                'Detailed Subject': '', 
+                'ProductDescription': ''}, inplace=True)
 
             # Start a transaction
             book_objects = []
@@ -512,6 +537,11 @@ class cbtBookViewSet(viewsets.ModelViewSet):
                     PR_TITLE=row['Title'],
                     PR_SUB_TITLE=row['Sub Title'],
                     PR_ISBN=row['ISBN'],
+                    PR_BOARD_id=row['Board Id'],
+                    PR_CLASS_id=row['Class Id'],
+                    PR_SERIES_id=row['Series Id'],
+                    PR_BOOK_TYPE_id=row['BookType Id'], 
+                    PR_IMPRINT=row['Imprint'],
                     PR_BOOK_CODE=row['Book Code'],
                     PR_COPYRIGHT=row['Copyright'],
                     PR_DATE_OF_RELEASE=pd.to_datetime(row['Date Of Release']).date() if pd.notna(row['Date Of Release']) else None,
@@ -540,17 +570,6 @@ class cbtBookViewSet(viewsets.ModelViewSet):
             return JsonResponse({'message': 'Import failed', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
          
 class cbtClassViewSet(viewsets.ModelViewSet):
-    
-    # def addUpdateClassData(self, request):
-    #     try:
-    #         serializer = CbtClassesSerializer(data=request.data)
-    #         if serializer.is_valid():
-    #             serializer.save()
-    #             return Response({'message': 'success'}, status=status.HTTP_201_CREATED)
-    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    #     except Exception as e:
-    #         return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
 
     def addUpdateClassData(self, request , PR_CLASS_ID = None):
         try:

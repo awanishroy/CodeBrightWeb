@@ -65,28 +65,22 @@ class CbtBookData(models.Model):
     # Title Information
     PR_TITLE = models.CharField(max_length=255, null=True, blank=True)
     PR_SUB_TITLE = models.CharField(max_length=255, null=True, blank=True)
-
-    # ISBN
     PR_ISBN = models.CharField(max_length=255, null=True, blank=True)
 
     # ForeignKey Relationships
     PR_SERIES = models.ForeignKey(CbtSeries, on_delete=models.SET_NULL, null=True, blank=True)
     PR_BOARD = models.ForeignKey(CbtBoard, on_delete=models.SET_NULL, null=True, blank=True)
     PR_CLASS = models.ForeignKey(CbtClasses, on_delete=models.SET_NULL, null=True, blank=True)
+    PR_BOOK_TYPE = models.ForeignKey(CbtBookType, on_delete=models.SET_NULL, null=True, blank=True)
 
-    PR_AUTHOR = models.CharField(max_length=100, null=True, blank=True)
-    PR_EDITION = models.CharField(max_length=100, null=True, blank=True)
-    PR_IMPRINT = models.CharField(max_length=100, null=True, blank=True)
-
-    # Classification Information
-    PR_BOOK_TYPE = models.CharField(max_length=100, null=True, blank=True)
     PR_BOOK_NUMBER = models.IntegerField(null=True, blank=True)
     PR_CLASS_LEVEL = models.CharField(max_length=100, null=True, blank=True)
     PR_PRODUCT_DIVISION = models.CharField(max_length=100, null=True, blank=True)
     PR_BROAD_SUBJECT = models.CharField(max_length=255, null=True, blank=True)
     PR_DETAILED_SUBJECT = models.CharField(max_length=255, null=True, blank=True)
-
-    # Book Details
+    PR_AUTHOR = models.CharField(max_length=100, null=True, blank=True)
+    PR_EDITION = models.CharField(max_length=100, null=True, blank=True)
+    PR_IMPRINT = models.CharField(max_length=100, null=True, blank=True)
     PR_BOOK_CODE = models.CharField(max_length=100, null=True, blank=True)
     PR_COPYRIGHT = models.CharField(max_length=50, null=True, blank=True)
     PR_DATE_OF_RELEASE = models.DateField(null=True, blank=True)
