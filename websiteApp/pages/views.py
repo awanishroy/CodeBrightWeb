@@ -466,7 +466,6 @@ def how_we_do(request):
 class cbtBookViewSet(viewsets.ModelViewSet):
     
     def addUpdateBookData(self, request , PR_BOOK_ID = None):
-        pass
         try:
             data = request.data
             if PR_BOOK_ID != None:
@@ -543,10 +542,11 @@ class cbtBoardViewSet(viewsets.ModelViewSet):
     
 class cbtSeriesViewSet(viewsets.ModelViewSet):
     
-    def addUpdateSeriesData(self,request, PR_SERIES_ID = None):
+    def addUpdateSeriesData(self, request, PR_SERIES_ID=None):
         try:
             data = request.data
-            if PR_SERIES_ID != None:
+
+            if PR_SERIES_ID is not None:
                 try:
                     instance = CbtSeries.objects.get(PR_SERIES_ID=PR_SERIES_ID)
                     serializer = CbtSeriesSerializer(instance, data=data, partial=True)
@@ -557,11 +557,18 @@ class cbtSeriesViewSet(viewsets.ModelViewSet):
 
             if serializer.is_valid():
                 serializer.save()
-                return Response({'message': 'success'}, status=status.HTTP_201_CREATED if 'PR_ID' not in data else status.HTTP_200_OK)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                if PR_SERIES_ID is not None:
+                    return Response({'message': 'Series updated successfully'}, status=status.HTTP_200_OK)
+                else:
+                    return Response({'message': 'Series created successfully'}, status=status.HTTP_201_CREATED)
+            else:
+                # Return validation errors
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
+            # Handle any unforeseen errors
             return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     
 class cbtAuthorViewSet(viewsets.ModelViewSet):
     

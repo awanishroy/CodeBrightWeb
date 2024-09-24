@@ -27,14 +27,29 @@ class CbtSeries(models.Model):
     PR_SERIES_ID = models.AutoField(primary_key=True)
     PR_SERIES_NAME = models.CharField(max_length=255)
     # Relationships
-    PR_CLASS = models.ForeignKey(CbtClasses, on_delete=models.SET_NULL, null=True, blank=True)
     PR_BOARD = models.ForeignKey(CbtBoard, on_delete=models.SET_NULL, null=True, blank=True)
+    # Many-to-Many Relationship with CbtClasses
+    PR_CLASSES = models.ManyToManyField(CbtClasses, through='CbtSeriesClass', related_name='series')
     # Timestamps
     PR_CREATED_AT = models.DateTimeField(auto_now_add=True)
     PR_MODIFIED_AT = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'cbt_series'
+
+
+# Pivot Table (CbtSeriesClass)
+class CbtSeriesClass(models.Model):
+    PR_SERIES_CLASS_ID = models.AutoField(primary_key=True)
+    PR_CLASS = models.ForeignKey(CbtClasses, on_delete=models.CASCADE)
+    PR_SERIES = models.ForeignKey(CbtSeries, on_delete=models.CASCADE)
+    # Additional fields can be added here if needed (e.g., timestamps, metadata)
+    PR_CREATED_AT = models.DateTimeField(auto_now_add=True)
+    PR_MODIFIED_AT = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'cbt_series_class'
+        unique_together = ('PR_CLASS', 'PR_SERIES')  # Ensures uniqueness between the class and series pair
 
 # Author Model
 class CbtAuthor(models.Model):
