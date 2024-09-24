@@ -34,21 +34,6 @@ class CbtSeriesSerializer(serializers.ModelSerializer):
             )
         return value
 
-class CbtAuthorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CbtAuthor
-        fields = '__all__'
-
-class CbtEditionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CbtEdition
-        fields = '__all__'
-
-class CbtImprintSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CbtImprint
-        fields = '__all__'
-
 class CbtBookTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CbtBookType

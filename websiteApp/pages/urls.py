@@ -111,15 +111,6 @@ urlpatterns = [
     path('add-series', views.cbtSeriesViewSet.as_view({'post': 'addUpdateSeriesData'})),
     path('update-series/<int:PR_SERIES_ID>', views.cbtSeriesViewSet.as_view({'post': 'addUpdateSeriesData'})),
     
-    path('add-author', views.cbtAuthorViewSet.as_view({'post': 'addUpdateAuthorData'})),
-    path('update-author/<int:PR_AUTHOR_ID>', views.cbtAuthorViewSet.as_view({'post': 'addUpdateAuthorData'})),
-    
-    path('add-edition', views.cbtEditionViewSet.as_view({'post': 'addUpdateEditionData'})),
-    path('update-edition/<int:PR_EDITION_ID>', views.cbtEditionViewSet.as_view({'post': 'addUpdateEditionData'})),
-    
-    path('add-imprint', views.cbtImprintViewSet.as_view({'post': 'addUpdateImprintData'})),
-    path('update-imprint/<int:PR_IMPRINT_ID>', views.cbtImprintViewSet.as_view({'post': 'addUpdateImprintData'})),
-    
     path('add-book-type', views.cbtBookTypeViewSet.as_view({'post': 'addUpdateBookTypeData'})),
     path('update-book-type', views.cbtBookTypeViewSet.as_view({'post': 'addUpdateBookTypeData'})),
 
