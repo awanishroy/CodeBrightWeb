@@ -100,7 +100,7 @@ urlpatterns = [
     path('add-book', views.cbtBookViewSet.as_view({'post': 'addUpdateBookData'})),
     path('update-book/<int:PR_BOOK_ID>', views.cbtBookViewSet.as_view({'post': 'addUpdateBookData'})),
     
-    path('import-excel-data', views.cbtBookViewSet.as_view({'get': 'importExcelData'})),
+    path('import-book-data', views.cbtBookViewSet.as_view({'post': 'importBookData'})),
 
     path('add-class', views.cbtClassViewSet.as_view({'post': 'addUpdateClassData'})),
     path('update-class/<int:PR_CLASS_ID>', views.cbtClassViewSet.as_view({'post': 'addUpdateClassData'})),

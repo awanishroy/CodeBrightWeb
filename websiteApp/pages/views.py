@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.contrib import messages
 import requests
+import pandas as pd
+import json
 from websiteApp.pages.serializers import *
 from rest_framework import viewsets , status
 from rest_framework.response import Response
@@ -484,7 +486,59 @@ class cbtBookViewSet(viewsets.ModelViewSet):
 
         except Exception as e:
             return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+        
+    def importBookData(self, request):
+        """
+        Handles bulk book data import using a CSV or Excel file upload.
+        """
+        try:
+            file = request.FILES.get('PR_FILE')
+            if not file:
+                return JsonResponse({'message': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Read the file into a DataFrame
+            df = pd.read_excel(file)  # Use pd.read_csv(file) if handling CSV files
+            
+            # Fill missing values with specified defaults
+            df.fillna({
+                'Title': '', 'Sub Title': '', 'ISBN': '', 'BookType': '', 'Company': '','Book Code': '', 'Copyright': '', 'Date Of Release': pd.NaT, 'Binding': '','Language': '', 'Pages': 0, 'TrimSize': '', 'Weight': 0.0, 'List Price': 0.0,
+                'Discount': 0.0, 'BookNumber': 0, 'ClassLevel': '', 'ProductDivision': '','BroadSubject': '', 'Detailed Subject': '', 'ProductDescription': ''}, inplace=True)
+
+            # Start a transaction
+            book_objects = []
+            for index, row in df.iterrows():
+                # Create a book object for each row in the DataFrame
+                book = CbtBookData(
+                    PR_TITLE=row['Title'],
+                    PR_SUB_TITLE=row['Sub Title'],
+                    PR_ISBN=row['ISBN'],
+                    PR_BOOK_CODE=row['Book Code'],
+                    PR_COPYRIGHT=row['Copyright'],
+                    PR_DATE_OF_RELEASE=pd.to_datetime(row['Date Of Release']).date() if pd.notna(row['Date Of Release']) else None,
+                    PR_BINDING=row['Binding'],
+                    PR_LANGUAGE=row['Language'],
+                    PR_PAGES=int(row['Pages']) if pd.notnull(row['Pages']) else None,
+                    PR_TRIM_SIZE=row['TrimSize'],
+                    PR_WEIGHT=float(row['Weight']) if pd.notnull(row['Weight']) else None,
+                    PR_LIST_PRICE=float(row['List Price']) if pd.notnull(row['List Price']) else None,
+                    PR_DISCOUNT=float(row['Discount']) if pd.notnull(row['Discount']) else None,
+                    PR_BOOK_NUMBER=int(row['BookNumber']) if pd.notnull(row['BookNumber']) else None,
+                    PR_CLASS_LEVEL=row['ClassLevel'],
+                    PR_PRODUCT_DIVISION=row['ProductDivision'],
+                    PR_BROAD_SUBJECT=row['BroadSubject'],
+                    PR_DETAILED_SUBJECT=row['Detailed Subject'],
+                    PR_PRODUCT_DESCRIPTION=row['ProductDescription'],
+                )
+                book_objects.append(book)
+
+            # Bulk create all book objects in one transaction
+            CbtBookData.objects.bulk_create(book_objects)
+
+            return JsonResponse({'message': 'Books imported successfully!'}, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            return JsonResponse({'message': 'Import failed', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+         
 class cbtClassViewSet(viewsets.ModelViewSet):
     
     # def addUpdateClassData(self, request):
@@ -568,7 +622,6 @@ class cbtSeriesViewSet(viewsets.ModelViewSet):
         except Exception as e:
             # Handle any unforeseen errors
             return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
     
 class cbtAuthorViewSet(viewsets.ModelViewSet):
     
@@ -657,4 +710,4 @@ class cbtBookTypeViewSet(viewsets.ModelViewSet):
 
         except Exception as e:
             return JsonResponse({'message': 'fail', 'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+    
