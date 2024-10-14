@@ -22,20 +22,70 @@
     }
 }
 
-.wrapper {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    animation: fadeIn 1000ms ease;
-    -webkit-animation: fadeIn 1000ms ease;
+    .wrapper {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        animation: fadeIn 1000ms ease;
+        -webkit-animation: fadeIn 1000ms ease;
 
-}
-
-
-.dot {
-    color: red;
-}
+    }
 
 
+    .dot {
+        color: red;
+    }
+
+
+    .stylish-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00695c; /* Red color */
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        position: relative;
+        z-index: 1;
+    }
+    
+    .stylish-btn::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        background: linear-gradient(45deg, #00695c, #058a7a, #18645b, #00695c);
+        border-radius: 8px;
+        z-index: -1;
+        filter: blur(5px);
+        animation: moveBorder 1s linear infinite, glow 1s ease-in-out infinite alternate;
+    }
+    
+    /* Moving border animation */
+    @keyframes moveBorder {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    
+    /* Glowing effect */
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 10px #004681;
+        }
+        100% {
+            box-shadow: 0 0 20px #004681;
+        }
+    }
+    
