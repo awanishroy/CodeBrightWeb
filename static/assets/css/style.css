@@ -1090,8 +1090,8 @@ img {
 .hero-section-wrap .hero-section-content-wrap {
     background: linear-gradient(180deg,  rgba(231,245,244,0.7) 0%, rgba(243, 246, 253, 0) 86.26%);
     /* background: linear-gradient(180deg, rgba(243, 246, 253, 0.7) 0%, rgba(243, 246, 253, 0) 86.26%); */
-    padding-top: 310px;
-    padding-bottom: 110px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 .hero-section-wrap .hero-section-content-wrap .bg-shape {
     position: absolute;
@@ -1362,7 +1362,7 @@ img {
     color: #ffffff;
 }
 .company-service-area {
-    padding: 100px 0 180px 0;
+    padding: 50px 0 180px 0;
 }
 .feature-page .company-service-area{
     padding-top: 0px;
@@ -1414,10 +1414,10 @@ img {
 .hero-blog-wrap .hero-section-content-wrap .hero-section-content {
     margin-bottom: 0;
 }
-.hero-blog-wrap .hero-section-content-wrap .hero-portfolio-body {
+/* .hero-blog-wrap .hero-section-content-wrap .hero-portfolio-body {
     border-bottom: 1px solid #D9D9D9;
     padding-bottom: 135px;
-}
+} */
 
 /* Partner Hero */
 .hero-partner-wrap .hero-section-content-wrap {
@@ -1433,8 +1433,8 @@ img {
     padding-top: 80px;
 }
 .partner-service-area .partner-service-inner {
-    padding-top: 180px;
-    border-top: 1px solid #D9D9D9;
+    padding-top: 20px;
+    /* border-top: 1px solid #D9D9D9; */
 }
 
 /* Career Hero */
@@ -1864,8 +1864,8 @@ img {
 
 /* Services */
 .service-area {
-    padding-top: 185px;
-    padding-bottom: 180px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .overview-page .service-area {
     padding-top: 0;
@@ -3324,7 +3324,7 @@ img {
 
 /* Our team 2 */
 .our-team-2-area {
-    padding: 220px 0;
+    padding: 50px 0;
 }
 .our-team-2-header {
     border-radius: 10px;
@@ -3970,7 +3970,7 @@ img {
 
 /* CTA */
 .cta-area {
-    padding: 180px 0 0 0;
+    padding: 50px 0 0 0;
 }
 .event-details-page .cta-area {
     padding-top: 120px;
@@ -4126,8 +4126,8 @@ img {
 
 /* News Section */
 .news-area {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .blog-details-page .news-area {
     padding-bottom: 0;
@@ -5617,7 +5617,7 @@ img {
 
 /* Contact */
 .contact-area {
-    padding: 180px 0;
+    padding: 80px 0;
 }
 .portfolio-page .contact-area {
     padding-top: 0;
